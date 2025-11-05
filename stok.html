@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Buku | Toko Buku Online</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="JS/data.js"></script>
+  <script defer src="JS/script.js"></script>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f3f4f6; margin: 0;">
+
+  <!-- Header -->
+  <div style="background-color: #0077ff; color: white; text-align: center; padding: 15px;">
+    <h2> Katalog & Stok Buku</h2>
+    <p style="margin: 0;">Daftar buku yang tersedia di toko kami</p>
+  </div>
+
+  <!-- Container Buku -->
+  <div id="daftarBuku" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
+
+    <!-- Buku 1 -->
+    <div style="background: white; border: 1px solid #ccc; border-radius: 8px; width: 200px; text-align: center; padding: 10px;">
+      <img src="IMAGE/pengantar_komunikasi.jpg" alt="Pengantar Ilmu Komunikasi" width="100%" style="border-radius: 6px;">
+      <h4>Pengantar Ilmu Komunikasi</h4>
+      <p><b>Edisi:</b> 2</p>
+      <p><b>Stok:</b> 548</p>
+      <p><b>Harga:</b> Rp 180.000</p>
+    </div>
+
+    <!-- Buku 2 -->
+    <div style="background: white; border: 1px solid #ccc; border-radius: 8px; width: 200px; text-align: center; padding: 10px;">
+      <img src="IMAGE/manajemen_keuangan.jpg" alt="Manajemen Keuangan" width="100%" style="border-radius: 6px;">
+      <h4>Manajemen Keuangan</h4>
+      <p><b>Edisi:</b> 3</p>
+      <p><b>Stok:</b> 392</p>
+      <p><b>Harga:</b> Rp 220.000</p>
+    </div>
+
+    <!-- Buku 3 -->
+    <div style="background: white; border: 1px solid #ccc; border-radius: 8px; width: 200px; text-align: center; padding: 10px;">
+      <img src="IMAGE/kepemimpinan.jpg" alt="Kepemimpinan" width="100%" style="border-radius: 6px;">
+      <h4>Kepemimpinan</h4>
+      <p><b>Edisi:</b> 1</p>
+      <p><b>Stok:</b> 278</p>
+      <p><b>Harga:</b> Rp 150.000</p>
+    </div>
+
+    <!-- Buku 4 -->
+    <div style="background: white; border: 1px solid #ccc; border-radius: 8px; width: 200px; text-align: center; padding: 10px;">
+      <img src="IMAGE/mikrobiologi.jpg" alt="Mikrobiologi Dasar" width="100%" style="border-radius: 6px;">
+      <h4>Mikrobiologi Dasar</h4>
+      <p><b>Edisi:</b> 2</p>
+      <p><b>Stok:</b> 165</p>
+      <p><b>Harga:</b> Rp 200.000</p>
+    </div>
+
+    <!-- Buku 5 -->
+    <div style="background: white; border: 1px solid #ccc; border-radius: 8px; width: 200px; text-align: center; padding: 10px;">
+      <img src="IMAGE/paud_perkembangan.jpg" alt="Perkembangan Anak Usia Dini" width="100%" style="border-radius: 6px;">
+      <h4>Perkembangan Anak Usia Dini</h4>
+      <p><b>Edisi:</b> 4</p>
+      <p><b>Stok:</b> 204</p>
+      <p><b>Harga:</b> Rp 250.000</p>
+    </div>
+
+  </div>
+
+  <!-- Tambah Buku Baru -->
+  <div style="background: white; padding: 20px; margin: 30px; border-radius: 10px; max-width: 600px; margin-left: auto; margin-right: auto;">
+    <h3 style="text-align: center; color: #0077ff;"> Tambah Buku Baru</h3>
+    <form onsubmit="return tambahBuku()" style="display: flex; flex-direction: column; gap: 10px;">
+      <input type="text" id="namaBarang" placeholder="Nama Buku" required style="padding: 8px;">
+      <input type="text" id="edisi" placeholder="Edisi" required style="padding: 8px;">
+      <input type="number" id="stok" placeholder="Jumlah Stok" required style="padding: 8px;">
+      <input type="text" id="harga" placeholder="Harga (contoh: Rp 100.000)" required style="padding: 8px;">
+      <input type="text" id="cover" placeholder="Nama File Gambar (contoh: img/namabuku.jpg)" required style="padding: 8px;">
+      <button type="submit" style="padding: 10px; background-color: #0077ff; color: white; border: none; border-radius: 6px; cursor: pointer;">Tambah Buku</button>
+    </form>
+  </div>
+
+  <script>
+    // fungsi nambah buku baru
+    function tambahBuku() {
+      const nama = document.getElementById("namaBarang").value;
+      const edisi = document.getElementById("edisi").value;
+      const stok = document.getElementById("stok").value;
+      const harga = document.getElementById("harga").value;
+      const cover = document.getElementById("cover").value;
+
+      // bikin elemen baru
+      const divBuku = document.createElement("div");
+      divBuku.style = "background: white; border: 1px solid #ccc; border-radius: 8px; width: 200px; text-align: center; padding: 10px;";
+      divBuku.innerHTML = `
+        <img src="${cover}" alt="${nama}" width="100%" style="border-radius: 6px;">
+        <h4>${nama}</h4>
+        <p><b>Edisi:</b> ${edisi}</p>
+        <p><b>Stok:</b> ${stok}</p>
+        <p><b>Harga:</b> ${harga}</p>
+      `;
+
+      // nambahin ke katalog
+      document.getElementById("daftarBuku").appendChild(divBuku);
+
+      alert("✅ Buku baru berhasil ditambahkan!");
+
+      // reset form
+      document.querySelector("form").reset();
+      return false;
+    }
+  </script>
+
+</body>
+</html>

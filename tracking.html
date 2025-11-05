@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking Pengiriman | Toko Buku Online</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="JS/data.js"></script>
+  <script defer src="JS/script.js"></script>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f3f4f6; margin: 0;">
+
+  <!-- Header -->
+  <div style="background-color: #0077ff; color: white; text-align: center; padding: 15px;">
+    <h2> Tracking Pengiriman</h2>
+    <p style="margin: 0;">Cek status pengiriman pesanan Anda</p>
+  </div>
+
+  <!-- Form Pencarian -->
+  <div style="background: white; margin: 30px auto; padding: 20px; border-radius: 10px; max-width: 500px;">
+    <h3 style="color: #0077ff;">Masukkan Nomor Delivery Order</h3>
+    <input type="text" id="nomorDO" placeholder="Contoh: 20230012" style="width: 100%; padding: 8px; margin-top: 10px; margin-bottom: 10px;">
+    <button onclick="cariTracking()" style="width: 100%; padding: 10px; background-color: #0077ff; color: white; border: none; border-radius: 6px; cursor: pointer;">Cari</button>
+  </div>
+
+  <!-- Hasil Tracking -->
+  <div id="hasilTracking" style="background: white; margin: 20px auto; padding: 20px; border-radius: 10px; max-width: 700px; display: none;">
+    <h3 style="color: #0077ff;"> Detail Pengiriman</h3>
+    <p><b>Nomor DO:</b> <span id="doNomor"></span></p>
+    <p><b>Nama Pemesan:</b> <span id="doNama"></span></p>
+    <p><b>Status:</b> <span id="doStatus"></span></p>
+    <p><b>Ekspedisi:</b> <span id="doEkspedisi"></span></p>
+    <p><b>Tanggal Kirim:</b> <span id="doTanggal"></span></p>
+    <p><b>Jenis Paket:</b> <span id="doPaket"></span></p>
+    <p><b>Total Pembayaran:</b> <span id="doTotal"></span></p>
+
+    <h4 style="margin-top: 20px; color: #0077ff;">Riwayat Perjalanan</h4>
+    <ul id="doPerjalanan" style="list-style-type: none; padding-left: 0;"></ul>
+  </div>
+
+</body>
+</html>

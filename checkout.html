@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemesanan Buku | Toko Buku Online</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="JS/data.js"></script>
+  <script defer src="JS/script.js"></script>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f3f4f6; margin: 0;">
+
+  <!-- Header -->
+  <div style="background-color: #0077ff; color: white; text-align: center; padding: 15px;">
+    <h2>🧾 Form Pemesanan Buku</h2>
+    <p style="margin: 0;">Isi data pemesan dan detail buku yang ingin dipesan</p>
+  </div>
+
+  <!-- Form Pemesan -->
+  <div style="background: white; margin: 20px auto; padding: 20px; border-radius: 10px; width: 90%; max-width: 600px;">
+    <h3 style="color: #0077ff;">Data Pemesan</h3>
+    <form id="formPemesanan">
+      <label>Nama Lengkap:</label><br>
+      <input type="text" id="nama" required style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+
+      <label>Email:</label><br>
+      <input type="email" id="email" required style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+
+      <label>Alamat Pengiriman:</label><br>
+      <textarea id="alamat" required style="width: 100%; padding: 8px; margin-bottom: 10px;"></textarea><br>
+
+      <label>No. Telepon:</label><br>
+      <input type="text" id="telepon" required style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+    </form>
+  </div>
+
+  <!-- Pilihan Buku -->
+  <div style="background: white; margin: 20px auto; padding: 20px; border-radius: 10px; width: 90%; max-width: 600px;">
+    <h3 style="color: #0077ff;">Pilih Buku yang Dipesan</h3>
+    <select id="pilihanBuku" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+      <option value="">-- Pilih Buku --</option>
+    </select>
+
+    <label>Jumlah:</label><br>
+    <input type="number" id="jumlah" min="1" value="1" style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+
+    <button onclick="tambahPesanan()" style="width: 100%; padding: 10px; background-color: #0077ff; color: white; border: none; border-radius: 6px; cursor: pointer;">Tambah ke Keranjang</button>
+  </div>
+
+  <!-- Daftar Pesanan -->
+  <div style="background: white; margin: 20px auto; padding: 20px; border-radius: 10px; width: 90%; max-width: 700px;">
+    <h3 style="color: #0077ff;">🛒 Daftar Pesanan</h3>
+    <table border="1" cellspacing="0" cellpadding="8" width="100%" style="border-collapse: collapse;">
+      <thead style="background-color: #0077ff; color: white;">
+        <tr>
+          <th>Nama Buku</th>
+          <th>Jumlah</th>
+          <th>Harga</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="tabelPesanan"></tbody>
+    </table>
+
+    <h3 style="text-align: right; margin-top: 10px;">Total Bayar: <span id="totalBayar">Rp 0</span></h3>
+
+    <button onclick="checkout()" style="width: 100%; padding: 10px; background-color: #00b894; color: white; border: none; border-radius: 6px; cursor: pointer;">Selesaikan Pesanan</button>
+  </div>
+
+</body>
+</html>

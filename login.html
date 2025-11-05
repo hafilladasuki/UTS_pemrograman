@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Toko Buku Online</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <script defer src="JS/data.js"></script>
+
+</head>
+<body style="font-family: Arial, sans-serif; background: linear-gradient(135deg, #0077ff, #00b4d8); height: 100vh; display: flex; justify-content: center; align-items: center;">
+
+  <div style="background: white; padding: 30px 40px; border-radius: 15px; width: 320px; text-align: center; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+    <h2 style="color: #0077ff; margin-bottom: 20px;">📚 Toko Buku Online</h2>
+
+    <form onsubmit="return login()">
+      <input type="email" id="email" placeholder="Email" required
+        style="width: 100%; padding: 10px; margin: 8px 0; border-radius: 8px; border: 1px solid #ccc;"><br>
+      <input type="password" id="password" placeholder="Password" required
+        style="width: 100%; padding: 10px; margin: 8px 0; border-radius: 8px; border: 1px solid #ccc;"><br>
+      <button type="submit"
+        style="width: 100%; padding: 10px; background: #0077ff; color: white; border: none; border-radius: 8px; cursor: pointer;">Login</button>
+    </form>
+
+    <div style="margin-top: 12px;">
+      <a href="#" onclick="showForgot()" style="color: #0077ff; text-decoration: none;">Lupa Password?</a> |
+      <a href="#" onclick="showRegister()" style="color: #0077ff; text-decoration: none;">Daftar</a>
+    </div>
+  </div>
+
+  <!-- Modal Lupa Password -->
+  <div id="forgotBox" style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5);">
+    <div style="background: white; width: 300px; margin: 15% auto; padding: 20px; border-radius: 10px; text-align:center;">
+      <h3>Lupa Password</h3>
+      <p>Masukkan email Anda:</p>
+      <input type="email" placeholder="Email Anda" style="width: 90%; padding: 8px; margin-bottom: 8px;"><br>
+      <button onclick="alert('Link reset dikirim ke email!')" style="padding: 8px 12px; background: #0077ff; color: white; border: none; border-radius: 8px;">Kirim</button><br><br>
+      <button onclick="closeModal()" style="padding: 6px 10px;">Tutup</button>
+    </div>
+  </div>
+
+  <!-- Modal Daftar -->
+  <div id="registerBox" style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5);">
+    <div style="background: white; width: 300px; margin: 10% auto; padding: 20px; border-radius: 10px; text-align:center;">
+      <h3>Daftar Akun Baru</h3>
+      <input type="text" placeholder="Nama Lengkap" style="width: 90%; padding: 8px; margin-bottom: 8px;"><br>
+      <input type="email" placeholder="Email" style="width: 90%; padding: 8px; margin-bottom: 8px;"><br>
+      <input type="password" placeholder="Password" style="width: 90%; padding: 8px; margin-bottom: 8px;"><br>
+      <button onclick="alert('Akun berhasil didaftarkan!')" style="padding: 8px 12px; background: #0077ff; color: white; border: none; border-radius: 8px;">Daftar</button><br><br>
+      <button onclick="closeModal()" style="padding: 6px 10px;">Tutup</button>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      let email = document.getElementById("email").value;
+      let pass = document.getElementById("password").value;
+      if (email === "admin@mail.com" && pass === "12345") {
+        alert("Login Berhasil!");
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Email atau password salah!");
+      }
+      return false;
+    }
+
+    function showForgot() {
+      document.getElementById("forgotBox").style.display = "block";
+    }
+
+    function showRegister() {
+      document.getElementById("registerBox").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("forgotBox").style.display = "none";
+      document.getElementById("registerBox").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>

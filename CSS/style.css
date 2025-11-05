@@ -1,0 +1,173 @@
+/* ==== GAYA DASAR ==== */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #0077ff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==== HEADER ==== */
+header, .header {
+  background-color: #0077ff;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+header img {
+  width: 60px;
+  vertical-align: middle;
+  border-radius: 8px;
+}
+
+header h2 {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+/* ==== CONTAINER UTAMA ==== */
+.container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px auto;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ==== FORM & INPUT ==== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea, select, button {
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #0077ff;
+  box-shadow: 0 0 3px rgba(0, 119, 255, 0.3);
+}
+
+button {
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #005fcc;
+}
+
+/* ==== TABEL ==== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background-color: #0077ff;
+  color: white;
+}
+
+/* ==== KATALOG BUKU ==== */
+.katalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.kartu-buku {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.kartu-buku:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.kartu-buku img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* ==== TOMBOL SPESIAL ==== */
+.btn-danger {
+  background-color: #e63946;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-success {
+  background-color: #00b894;
+}
+
+.btn-success:hover {
+  background-color: #009e7c;
+}
+
+/* ==== TRACKING ==== */
+.perjalanan-item {
+  background-color: #f8f8f8;
+  border-left: 4px solid #0077ff;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 600px) {
+  .katalog {
+    flex-direction: column;
+    align-items: center;
+  }
+  .kartu-buku {
+    width: 90%;
+  }
+  .container {
+    width: 95%;
+  }
+}

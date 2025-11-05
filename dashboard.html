@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Toko Buku Online</title>
+  <link rel="stylesheet" href="CSS/style.css">
+
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 0;">
+
+  <!-- Header dengan logo sendiri -->
+  <div style="text-align: center; background-color: #0077ff; color: white; padding: 15px 0;">
+    <!-- Ganti src di bawah ini pakai nama file logo kamu -->
+    <img src="IMAGE/bukuu.png" alt="Logo Toko Buku" width="100" height="100" style="vertical-align: middle; border-radius: 10px;">
+    <h2 style="display: inline-block; margin-left: 10px; vertical-align: middle;">Toko Buku Online</h2>
+  </div>
+
+  <!-- Greeting -->
+  <div style="text-align: center; margin-top: 20px;">
+    <h3 id="greeting" style="color: #333;"></h3>
+    <p style="color: #666;">Selamat datang di dashboard utama toko buku.</p>
+  </div>
+
+  <!-- Menu Navigasi -->
+  <div style="max-width: 400px; margin: 30px auto; display: flex; flex-direction: column; gap: 10px;">
+    <a href="stok.html" style="background-color: white; padding: 12px; text-align: center; border: 1px solid #ccc; border-radius: 6px; text-decoration: none; color: #0077ff;">📦 Informasi Stok / Katalog</a>
+    <a href="tracking.html" style="background-color: white; padding: 12px; text-align: center; border: 1px solid #ccc; border-radius: 6px; text-decoration: none; color: #0077ff;">🚚 Tracking Pengiriman</a>
+    <a href="checkout.html" style="background-color: white; padding: 12px; text-align: center; border: 1px solid #ccc; border-radius: 6px; text-decoration: none; color: #0077ff;">🧾 Laporan Pemesanan</a>
+    <a href="#" style="background-color: white; padding: 12px; text-align: center; border: 1px solid #ccc; border-radius: 6px; text-decoration: none; color: #0077ff;">💳 History Transaksi</a>
+  </div>
+
+  <!-- Tombol Logout -->
+  <div style="text-align: center; margin-top: 20px;">
+    <button onclick="logout()" style="background-color: #ff4d4d; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">Keluar</button>
+  </div>
+
+  <script>
+    // Greeting otomatis
+    const jam = new Date().getHours();
+    let sapaan;
+    if (jam >= 5 && jam < 12) {
+      sapaan = "Selamat Pagi ";
+    } else if (jam >= 12 && jam < 17) {
+      sapaan = "Selamat Siang ";
+    } else if (jam >= 17 && jam < 20) {
+      sapaan = "Selamat Sore ";
+    } else {
+      sapaan = "Selamat Malam ";
+    }
+    document.getElementById("greeting").innerText = sapaan;
+
+    // Logout
+    function logout() {
+      alert("Anda telah logout!");
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
